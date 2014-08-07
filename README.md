@@ -3,11 +3,11 @@ translateYo
 
 #### Team Members
 
-Adam Hardy
-Farheen Malik
-Hilary Barr
-Julius Jung
-Stella Kim
+- Adam Hardy
+- Farheen Malik
+- Hilary Barr
+- Julius Jung
+- Stella Kim
 
 #### Description
 
