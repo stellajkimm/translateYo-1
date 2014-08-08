@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  // padding: 0px 70px 0px 200px;
+  text-align: center;
+  margin: 100px 0px 150px 0px;
+}
+
+img {
+  height: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn {
+  border: none;
+  background-color: #f8f8f8;
+}
+
+form {
+  text-align: center;
+}
