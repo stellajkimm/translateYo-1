@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808035820) do
+ActiveRecord::Schema.define(version: 20140808195353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.text     "comment"
-    t.integer  "user_id"
-    t.integer  "query_id"
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
+
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
 
   create_table "fluencies", force: true do |t|
     t.string   "english"
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20140808035820) do
   end
 
   create_table "queries", force: true do |t|
-    t.string   "english"
-    t.string   "other"
+    t.text     "english"
+    t.text     "other"
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"
