@@ -2,7 +2,8 @@ class AddAncestryIndexToComments < ActiveRecord::Migration
   def up
   	add_index :comments, :ancestry
   end
-  def up
+
+  def down
   	remove_index :comments, :ancestry
   end
 
