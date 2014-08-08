@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def new
     @parent_id = params.delete(:parent_id)
     @commentable = find_commentable
