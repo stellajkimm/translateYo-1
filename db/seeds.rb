@@ -1,4 +1,4 @@
-grequire 'faker'
+require 'faker'
 
 languages = %W(english spanish french italian korean japanese chinese arabic alien)
 level     = %W(noob decent master)
