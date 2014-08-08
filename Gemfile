@@ -17,7 +17,6 @@ gem 'ancestry'
 #Copies from tweetergy post...not sure if we need (Hilary)
 gem 'haml'
 gem 'haml-rails'
-gem 'bootstrap-sass'
 
 gem 'faker'
 

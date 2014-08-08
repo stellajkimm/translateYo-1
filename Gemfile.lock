@@ -158,11 +158,8 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   autoprefixer-rails
-  bcrypt (~> 3.1.7)
-  bootstrap-sass (~> 3.2.0)
-  coffee-rails (~> 4.0.0)
   bcrypt
-  bootstrap-sass
+  bootstrap-sass (~> 3.2.0)
   devise
   faker
   haml
