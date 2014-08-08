@@ -1,8 +1,8 @@
 class CreateQueries < ActiveRecord::Migration
   def change
     create_table :queries do |t|
-      t.string :english
-      t.string :other
+      t.text :english
+      t.text :other
 
       t.belongs_to :language
       t.belongs_to :user
