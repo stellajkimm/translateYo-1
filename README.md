@@ -3,11 +3,11 @@ translateYo
 
 #### Team Members
 
-- Adam Hardy
-- Farheen Malik
-- Hilary Barr
-- Julius Jung
-- Stella Kim
+- [Adam Hardy](https://github.com/ahardy55)
+- [Farheen Malik](https://github.com/fma2)
+- [Hilary Barr](https://github.com/hilarybarr)
+- [Julius Jung](https://github.com/juljun14)
+- [Stella Kim](https://github.com/stellajkimm)
 
 #### Description
 
