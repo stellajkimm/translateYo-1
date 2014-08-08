@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
 	belongs_to :commentable, :polymorphic => true
 
 	has_many :votes
+
+	validates :content, presence: true
 end
