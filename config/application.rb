@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Rails.application.config.assets.precompile += %w( nav.css )
+
 module TranslateYo
   class Application < Rails::Application
     #below is from http://richonrails.com/articles/working-with-bootstrap-sass.. not sure if we need it
