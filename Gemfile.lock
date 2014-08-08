@@ -50,6 +50,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    faker (1.4.2)
+      i18n (~> 0.5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -152,16 +154,16 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
-  bcrypt (~> 3.1.7)
+  bcrypt
   bootstrap-sass
-  coffee-rails (~> 4.0.0)
   devise
+  faker
   haml
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg
-  rails (= 4.1.4)
+  rails
   rspec-rails (~> 3.0.0)
   sass-rails
   sdoc (~> 0.4.0)
