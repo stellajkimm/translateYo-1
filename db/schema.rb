@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20140808035820) do
   end
 
   create_table "queries", force: true do |t|
-    t.string   "english"
-    t.string   "other"
+    t.text     "english"
+    t.text     "other"
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"
