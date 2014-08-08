@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 describe CommentsController, :type => :controller do
-  it "#index" do
-  	get :index
-  end
+  # context "#index" do
+  	it "user can see comments on queried translation" do
+  		pending
+  	end
+  # end
 end
