@@ -1,3 +1,39 @@
+
+<!-- LOGIN -->
+<div class="modal fade bs-example-modal-log-in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form>
+        <h3>Log In</h3>
+        <br><br>
+        Name: <input type="text"><br><br>
+        Email: <input type="text"><br><br>
+        Password: <input type="password"><br><br>
+        <input type="submit">
+        <br><br>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP -->
+<div class="modal fade bs-example-modal-sign-up" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h3>Sign Up</h3>
+      <form>
+        <br><br>
+        Name: <input type="text"><br><br>
+        Email: <input type="text"><br><br>
+        Password: <input type="password"><br><br>
+        <input type="submit">
+        <br><br>
+      </form>
+
+    </div>
+  </div>
+</div>
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,8 +51,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
 
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-log-in">Log In</a></li>
+        <li><a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sign-up">Sign Up</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
