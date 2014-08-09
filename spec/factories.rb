@@ -14,7 +14,9 @@ FactoryGirl.define do
   end
 
   factory :query do
-
+  	sequence(:english) {|n| "Hello #{n}"}
+  	title "Need help"
+  	description "Please help"
   end
 
   factory :comment do
