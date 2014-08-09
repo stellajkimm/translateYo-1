@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140808195353) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.text     "content"
+    t.string   "content"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.datetime "created_at"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140808195353) do
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
 
   create_table "fluencies", force: true do |t|
     t.string   "proficiency"
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140808195353) do
 
   create_table "queries", force: true do |t|
     t.text     "english"
-    t.text     "other"
+    t.text     "content"
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"

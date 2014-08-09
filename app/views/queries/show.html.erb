@@ -1,0 +1,13 @@
+<h1><%= @query.content %></h1>
+
+<div class="content">
+  <%= @query.content %>  
+</div>
+
+<h2>Comments</h2>
+
+<p><%= link_to 'Add a Comment', new_query_comment_path(@query) %></p>
+
+<ul class="comment_list">
+  <%= render :partial => 'comments/comment', :collection => @query.comments %>
+</ul>

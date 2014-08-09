@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+
+<p>Add a <%= link_to 'new query', new_query_path %>.</p>
+
+<ul>
+  <% @queries.each do |query| %>
+    <li><%= link_to query.content, query_path(query) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,15 @@
+<h1>Add a Query</h1>
+
+<%= form_for @query do |f| %>
+  <p>
+    <%= f.label :english %><br>
+    <%= f.text_field :english %>
+  </p>
+  
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+  
+  <p><%= f.submit 'add post' %></p>
+<% end %>
