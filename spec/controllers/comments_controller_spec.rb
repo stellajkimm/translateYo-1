@@ -14,7 +14,7 @@ describe CommentsController, :type => :controller do
 
 	context "#create" do
 		it "creates a comment with valid params" do
-			# pending
+			pending
 			# expect {
    #        comment :create, { comment: {title: "New Post!", content: "A nice post"} }
    #        }.to change{Comment.count}.by(1)

@@ -44,6 +44,8 @@ gem 'autoprefixer-rails'
 
 gem 'devise'
 
+gem 'microsoft_translator'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -4,8 +4,8 @@ FactoryGirl.define do
     password "password"
   end
 
-  factory :post do
-    sequence(:title) { |n| "New post#{n}" }
-    content "A great post."
-  end
+  # factory :post do
+  #   sequence(:title) { |n| "New post#{n}" }
+  #   content "A great post."
+  # end
 end

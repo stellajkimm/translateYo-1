@@ -1,2 +1,2 @@
-class LanguagesController < ApplicationController
+class LanguagesController < ApplicationControllerg
 end
