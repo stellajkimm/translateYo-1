@@ -44,7 +44,13 @@ ActiveRecord::Schema.define(version: 20140808195353) do
 
   create_table "queries", force: true do |t|
     t.text     "english"
+<<<<<<< HEAD
     t.text     "content"
+=======
+    t.text     "other"
+    t.text     "title"
+    t.text     "description"
+>>>>>>> master
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"
