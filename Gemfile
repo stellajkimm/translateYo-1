@@ -48,6 +48,10 @@ gem 'devise'
 
 gem 'microsoft_translator'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> translate-API
 # Use unicorn as the app server
 # gem 'unicorn'
 
