@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   before_filter :get_parent
   
   def new
-    @comment = @parent.comments.build
+    @user_id=session[:user_id]
+    @comment = @parent.comments.build(user_id: @user_id)
   end
 
   def create

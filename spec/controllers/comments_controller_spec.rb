@@ -4,12 +4,8 @@ describe CommentsController, :type => :controller do
 	let!(:query) {FactoryGirl.create :query}
 	let!(:comment) {FactoryGirl.create :comment}
 
-	context "#index" do
-		pending
-	end
-
 	context "#new" do
-		pending
+		
 	end
 
 	context "#create" do
