@@ -1,23 +1,35 @@
 require 'rails_helper'
 
 describe CommentsController, :type => :controller do
-	it "#index" do
+	let!(:query) {FactoryGirl.create :query}
+	let!(:comment) {FactoryGirl.create :comment}
+
+	context "#index" do
 		pending
 	end
 
-	it "#new" do
+	context "#new" do
 		pending
 	end
 
-	it "#create" do
+	context "#create" do
+		it "creates a comment with valid params" do
+			# pending
+			# expect {
+   #        comment :create, { comment: {title: "New Post!", content: "A nice post"} }
+   #        }.to change{Comment.count}.by(1)
+		end
+
+		it "doesn't create a comment when params are invalid" do
+			pending
+		end
+	end
+
+	context "#edit" do
 		pending
 	end
 
-	it "#edit" do
-		pending
-	end
-
-	it "#destroy" do
+	context "#destroy" do
 		pending
 	end
 
