@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  #root 'globe#index'
+  # root 'globe#index'
 
   resources :comments do
     resources :comments

@@ -16,8 +16,11 @@ body {
   position: fixed;
   text-align: center;
 }
+
 #container {
-  background-color: black;
+  /*background-color: black;*/
+  float: left;
+  width: 40%;
 }
 .navbar-background {
   background-color: #02771C;
@@ -31,7 +34,7 @@ img {
 
 .btn {
   border: none;
-  background-color: #02771C;
+  background-color: #f8f8f8;
 }
 
 form {
