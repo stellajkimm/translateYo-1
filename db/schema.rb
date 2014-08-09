@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140809192233) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "votes"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
