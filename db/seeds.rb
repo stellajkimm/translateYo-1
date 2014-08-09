@@ -1,4 +1,4 @@
-grequire 'faker'
+require 'faker'
 
 languages = %W(english spanish french italian korean japanese chinese arabic alien)
 level     = %W(noob decent master)
@@ -11,9 +11,8 @@ level     = %W(noob decent master)
 
   Language.create(lingua: languages[i])
 
-  2.times do 
-    user.fluencies.create(english: "english mofo. do you speak it?",
-                   other: "nope, I don't speak english.",
+  2.times do
+    user.fluencies.create(
                    language_id: rand(1..10),
                    proficiency: level.sample)
   end
