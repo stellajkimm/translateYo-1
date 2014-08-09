@@ -30,9 +30,6 @@ describe CommentsController, :type => :controller do
 			post :create
 			comment = FactoryGirl.build(:comment, content: nil)
 	    expect(response).to render_template("comments/new")
-	    # assigns[:subject].should be_new_record
-	    # flash[:notice].should be_blank
-	    # response.should render_template(:new)
   	end
 	end
 
