@@ -76,14 +76,14 @@ french = Language.create(lingua: "french")
     
 50.times do |i|
   Query.find(rand(1..36).comments.create(content: Faker::Lorem.paragraph,
-                 commentable_id: i, commentable_type: "query")
+                 commentable_id: i, commentable_type: "query"))
 end
 
 50.times do |i|
   Comment.find(rand(1..50)).comments.create(content: Faker::Lorem.paragraph, commentable_id: i + 50, commentable_type: "comment")
-=======
+# =======
   Comment.create(content: "And the cow jumped over the moon.",
                  commentable: User.first.comments.first
                  )
 end
->>>>>>> ae8dea3397a32597a4063d2d42f47ad9d39374be
+# >>>>>>> ae8dea3397a32597a4063d2d42f47ad9d39374be
