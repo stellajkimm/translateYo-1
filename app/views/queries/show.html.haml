@@ -1,6 +1,9 @@
 
 %br
-%h3= @query.content
+%h3= @query.title
+%li= @query.description
+%li= @query.english
+%li= @query.other
 
-= nested_comments @comments
-= render "comments/form"
+/ = nested_comments @comments
+/ = render "comments/form"
