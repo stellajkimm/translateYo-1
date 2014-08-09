@@ -1,31 +1,34 @@
 class CommentsController < ApplicationController
+  before_filter :get_parent
   
   def new
-    @parent_id = params.delete(:parent_id)
-    @commentable = find_commentable
-    @comment = Comment.new( :parent_id => @parent_id, 
-                            :commentable_id => @commentable.id,
-                            :commentable_type => @commentable.class.to_s)
+    @comment = @parent.comments.build
   end
-  
+
   def create
-    @commentable = find_commentable
-    @comment = @commentable.comments.build(params[:comment])
+    @comment = @parent.comments.build(comment_params)
+    
     if @comment.save
-      flash[:notice] = "Successfully created comment."
-      redirect_to @commentable
+      redirect_to @comment.query, :notice => 'Thank you for your comment!'
     else
-      flash[:error] = "Error adding comment."
+      render :new
     end
   end
- 
-  private
-  def find_commentable
-    params.each do |name, value|
-      if name =~ /(.+)_id$/
-        return $1.classify.constantize.find(value)
-      end
-    end
-    nil
+
+  protected
+  
+  def get_parent
+    @parent = Query.find_by_id(params[:query_id]) if params[:query_id]
+    @parent = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
+    #redirect to queries_path(@query)
+    redirect_to queries_path unless defined?(@parent)
   end
+
+   def comment_params
+    # This says that params[:user] is required, but inside that, only params[:user][:name] and params[:user][:email] are permitted
+    # Unpermitted params will be stripped out
+    params.require(:comment).permit(:content)
+  end
+
+
 end

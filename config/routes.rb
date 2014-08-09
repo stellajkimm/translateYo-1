@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'globe#index'
+  #root 'globe#index'
+
+  resources :comments do
+    resources :comments
+  end
 
   resources :queries do
     resources :comments
   end
+  
+  root :to => 'queries#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
