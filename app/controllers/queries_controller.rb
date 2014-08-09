@@ -3,7 +3,8 @@ class QueriesController < ApplicationController
 	# include translateYo::Commentable  #may need to be rewritten to work
 
   def index
-    @queries = Query.where(language_id: params[:language_id])
+    @queries = Query.all
+    #.where(language_id: params[:language_id])
   end
 
   def show
@@ -13,6 +14,7 @@ class QueriesController < ApplicationController
   def new
     @query = Query.new
   end
+
 
 
   def create

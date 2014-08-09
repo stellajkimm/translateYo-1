@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = @parent.comments.build(comment_params)
     
     if @comment.save
-      redirect_to queries_path(@comment.query), :notice => 'Thank you for your comment!'
+      redirect_to @comment.query, :notice => 'Thank you for your comment!'
     else
       render :new
     end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   def get_parent
     @parent = Query.find_by_id(params[:query_id]) if params[:query_id]
     @parent = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-    
+    #redirect to queries_path(@query)
     redirect_to queries_path unless defined?(@parent)
   end
 

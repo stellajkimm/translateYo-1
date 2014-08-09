@@ -4,6 +4,6 @@
 
 <ul>
   <% @queries.each do |query| %>
-    <li><%= link_to query.content, query_path(query) %></li>
+    <li><%=link_to query.title, query_path(query) %></li>
   <% end %>
 </ul>

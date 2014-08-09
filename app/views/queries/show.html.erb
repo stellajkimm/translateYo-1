@@ -1,12 +1,18 @@
 
 <h1> Query: </h1>
 <div class="content">
- <% if @query.english %>
  <br>Title: <%= @query.title %> 
- <br>Description: <%= @query.description %> 
- <br>English: <%=@query.english%>
+ <%= @language %>
+
+ <% if @query.description %>
+ 	<br>Description: <%= @query.description %> 
  <%end%>
- <br>Content: <%= @query.content %>  
+ <% if @query.english %>
+ 	<br>English: <%=@query.english%>
+ <%end%>
+ <% if @query.other %>
+    <br>Content: <%= @query.other %> 
+ <%end%> 
  <br><%= @query.created_at %> 
 </div>
 
@@ -20,3 +26,8 @@
 <ul class="comment_list">
   <%= render :partial => 'comments/comment', :collection => @query.comments %>
 </ul>
+
+
+</br></br>
+ <p><%= link_to 'Back', queries_path %></p>
+
