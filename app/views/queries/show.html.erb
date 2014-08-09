@@ -1,0 +1,33 @@
+
+<h1> Query: </h1>
+<div class="content">
+ <br>Title: <%= @query.title %> 
+ <%= @language %>
+
+ <% if @query.description %>
+ 	<br>Description: <%= @query.description %> 
+ <%end%>
+ <% if @query.english %>
+ 	<br>English: <%=@query.english%>
+ <%end%>
+ <% if @query.other %>
+    <br>Content: <%= @query.other %> 
+ <%end%> 
+ <br><%= @query.created_at %> 
+</div>
+
+<h2>Comments</h2>
+
+ <p><%= link_to 'Add a Comment', new_query_comment_path(@query) %></p> 
+
+
+
+
+<ul class="comment_list">
+  <%= render :partial => 'comments/comment', :collection => @query.comments %>
+</ul>
+
+
+</br></br>
+ <p><%= link_to 'Back', queries_path %></p>
+
