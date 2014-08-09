@@ -3,18 +3,18 @@ require 'faker'
 languages = %W(spanish, french, italian, german, dutch, portuguese)
 level     = %W(noob decent master)
 
-20.times do |i|
-  user = User.create(first_name: Faker::Name.first_name,
-               last_name: Faker::Name.last_name,
-                password_digest: "password",
-                username: Faker::Internet.user_name)
+# 20.times do |i|
+#   user = User.create(first_name: Faker::Name.first_name,
+#                last_name: Faker::Name.last_name,
+#                 password_digest: "password",
+#                 username: Faker::Internet.user_name)
 
-  2.times do 
-    user.fluencies.create(language_id: rand(1..10),
-                          proficiency: level.sample)
-  end
+#   2.times do 
+#     user.fluencies.create(language_id: rand(1..10),
+#                           proficiency: level.sample)
+#   end
 
-end
+# end
 
 spanish = Language.create(lingua: "spanish")
 
