@@ -21,5 +21,6 @@ level     = %W(noob decent master)
               comment_id: rand(1..10))
 
   Comment.create(content: "And the cow jumped over the moon.",
-                 commentable: User.first.comments.first)
+                 commentable: User.first.comments.first
+                 )
 end
