@@ -26,7 +26,7 @@ describe CommentsController, :type => :controller do
 			expect(subject).to redirect_to(queries_path)
 		end
 
-		it "should re-render new template on failed save" do
+		it "should re-render new template on failed save" do #BUGBUG
 			post :create
 			comment = FactoryGirl.build(:comment, content: nil)
 	    expect(response).to render_template("comments/new")
