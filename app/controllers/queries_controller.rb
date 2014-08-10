@@ -26,6 +26,26 @@ class QueriesController < ApplicationController
     end
   end
 
+  def bing_new
+    @query = language.queries.new
+  end
+
+  def bing_create
+    text_to_translate = params[:query][:english] 
+    to_text = Language.find(params[:language_id])
+    API.call_api
+    translation = $translator.translate(text_to_translate, "en", to_text.code, "text/html")
+    @query = language.queries.new(query_params)
+    @query.other = translation
+    if @query.save
+      redirect_to language_path(@language)
+      p "$" * 50
+      p @query
+    else
+      render 'bing_new'
+    end
+  end
+
   private
 
   def query_params

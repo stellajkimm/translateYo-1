@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
 
-      t.string :content
+      t.text :content
       t.integer :commentable_id
       t.string :commentable_type
       t.integer :up_vote, default: 0
