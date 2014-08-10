@@ -1,7 +1,9 @@
-
+<div class="header">
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 
-<p>Add a <%= link_to "new #{@language.lingua} query", new_language_query_path(@language) %>.</p>
+<%= link_to "Post Query through Bing Translation", new_language_query_path(@language), class: "btn btn-default" %><br><br>
+<%= link_to "Post Query through Your Own Translation", new_language_query_path(@language), class: "btn btn-default" %><br><br>
+</div>
 
 <div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100 }'>
   <% @queries.each do |query| %>
@@ -9,7 +11,7 @@
         <div class="col-md-4 item">
           <h4><%= query.english %></h4>
           <p><%= query.other %></p>
-          <p><strong><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></strong></p>
+          <p><em><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em></p>
           <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
         </div>
     <% end %>
