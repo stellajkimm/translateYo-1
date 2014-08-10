@@ -132,6 +132,7 @@ $('.globe').mouseenter(function() {
 }).mouseleave(function(){
   speed = 0.0500;
 })
+
 $(document).ready(function(){
   init();
   animate();
