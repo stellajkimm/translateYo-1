@@ -22,6 +22,7 @@ gem 'faker'
 
 gem 'acts_as_tree'
 
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -42,6 +43,16 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capybara', '~> 2.2.0'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
