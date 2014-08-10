@@ -1,15 +1,18 @@
-<div>
-  <h2><%= @language.lingua %></h2>
-  <%= image_tag(@language.flag) %>
-</div>
+
+<h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 
 <p>Add a <%= link_to "new #{@language.lingua} query", new_language_query_path(@language) %>.</p>
-<ul>
+
+<div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100 }'>
   <% @queries.each do |query| %>
     <% unless query.new_record? %>
-      <li>
-        <%= link_to "#{query.english[0..50]}&hellip;".html_safe, query_path(query) %>
-      </li>
+        <div class="col-md-4 item">
+          <h4><%= query.english %></h4>
+          <p><%= query.other %></p>
+          <p><%= query.created_at %></p>
+          <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
+          <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
     <% end %>
   <% end %>
-</ul>
+</div>
