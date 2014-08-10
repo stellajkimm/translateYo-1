@@ -10,13 +10,14 @@ FactoryGirl.define do
   end
 
   factory :language do
-
+    lingua "Spanish"
   end
 
   factory :query do
   	sequence(:english) {|n| "Hello #{n}"}
   	title "Need help"
   	description "Please help"
+    user_id [1,2,3,4].sample
   end
 
   factory :comment do
