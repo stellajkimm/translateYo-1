@@ -1,4 +1,3 @@
-
 class QueriesController < ApplicationController
 	# include translateYo::Commentable  #may need to be rewritten to work
   #before_action :language
