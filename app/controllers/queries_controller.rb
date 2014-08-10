@@ -10,6 +10,7 @@ class QueriesController < ApplicationController
   def show
     @query = Query.find(params[:id])
     @language = @query.language
+    @username = User.find(@query.user_id).username
   end
 
 
@@ -29,7 +30,7 @@ class QueriesController < ApplicationController
   end
 
   def bing_create
-    text_to_translate = params[:query][:english] 
+    text_to_translate = params[:query][:english]
     to_text = Language.find(params[:language_id])
     API.call_api
     translation = $translator.translate(text_to_translate, "en", to_text.code, "text/html")
