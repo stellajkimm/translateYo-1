@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140810171753) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.string   "content"
+    t.text     "content"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "up_vote",          default: 0
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20140810171753) do
     t.text     "english"
     t.text     "other"
     t.text     "title"
-    t.text     "description"
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"
