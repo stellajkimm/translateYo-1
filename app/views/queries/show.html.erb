@@ -1,3 +1,4 @@
+
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 <br><br>
 <div class="content">
@@ -12,7 +13,7 @@
  <% if @query.other %>
     <br><strong>Content: </strong><%= @query.other %><br>
  <%end%>
- <br><em><%= @query.created_at.strftime("%B %y, %Y, %I:%M%P") + ", " + @username %></em>
+ <!-- <br><em><%#= @query.created_at.strftime("%B %y, %Y, %I:%M%P") + ", " + @username %></em> -->
 </div>
 
 <div class="comments">

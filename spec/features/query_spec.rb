@@ -7,9 +7,18 @@ describe "Query features" do
     let!(:query) { FactoryGirl.create(:query, :language => language) }
 
     it "can view a list of queries for a given language" do 
-      visit language_path(language.id)
-      expect(page).to have_text()
-      
+      visit query_path(query.id)
+      expect(page).to have_text("Description")
+    end
+
+    it "links to create a comment" do 
+      visit query_path(query.id)
+      expect(page).to have_link("Add a Comment")
+    end
+
+    it "links to back" do 
+      visit query_path(query.id)
+      expect(page).to have_link("Back")
     end
 
   end

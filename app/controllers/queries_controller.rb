@@ -10,7 +10,7 @@ class QueriesController < ApplicationController
   def show
     @query = Query.find(params[:id])
     @language = @query.language
-    @username = User.find(@query.user_id).username
+    # @username = User.find(@query.user_id).username
   end
 
 
