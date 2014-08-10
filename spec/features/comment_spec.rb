@@ -4,19 +4,19 @@ describe 'Comment features' do
 	context "on new comment page" do
 		let(:query) { FactoryGirl.create(:query) }
 		it "can see a form to write a new comment" do
-			pending
-			# stub_authorize_user!
-			# visit new_query_comment_path(query)
-			# expect(page).to have_content("content")
+			stub_authorize_user!
+			visit new_query_comment_path(query)
+			expect(page).to have_content("content")
 		end
 
 		it "can see a form with button 'add comment'" do
+			stub_authorize_user!
 			visit new_query_comment_path(query)
 			expect(page).to have_button("add comment")
 		end
 
 		it "can create a comment with form" do #BUGBUG
-			# stub_authorize_user!
+			stub_authorize_user!
 			visit new_query_comment_path(query)
 			expect {
 				fill_in 'Content', with: 'Here is my comment!'
