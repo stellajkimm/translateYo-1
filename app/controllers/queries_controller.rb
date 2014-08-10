@@ -12,6 +12,12 @@ class QueriesController < ApplicationController
     @language = @query.language
   end
 
+
+  def new
+    @language = Language.find(params[:language_id])
+    @query = @language.queries.new
+  end
+
   def create
     @query = language.queries.new(query_params)
 
