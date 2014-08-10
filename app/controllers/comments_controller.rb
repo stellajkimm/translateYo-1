@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     @parent = Query.find_by_id(params[:query_id]) if params[:query_id]
     @parent = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
     #redirect to queries_path(@query)
-    redirect_to queries_path unless defined?(@parent)
+    redirect_to languages_path unless defined?(@parent) #Had to change this from queries_path to languages_path
   end
 
    def comment_params
