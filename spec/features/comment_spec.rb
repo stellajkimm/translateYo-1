@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 describe 'Comment features' do
+
 	context "on new comment page" do
-		let(:query) { FactoryGirl.create(:query) }
+
+		let!(:language) {FactoryGirl.create(:language)}
+		let!(:query) { FactoryGirl.create(:query, :language => language) }
+
 		it "can see a form to write a new comment" do
 			stub_authorize_user!
 			visit new_query_comment_path(query)
@@ -17,11 +21,12 @@ describe 'Comment features' do
 
 		it "can create a comment with form" do #BUGBUG
 			stub_authorize_user!
-			visit new_query_comment_path(query)
-			expect {
+			p query
+			expect{ 
+				visit new_query_comment_path(query)
 				fill_in 'Content', with: 'Here is my comment!'
-				click_button 'add comment'
-			}.to change{Comment.count}.by(1) 
+				click_button 'add comment' 
+				}.to change{Comment.count}.by(1) 
 		end
 
 	end
