@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav">
         <% all_languages.each do |lang| %>
           <li>
-            <%= link_to image_tag(lang.flag), language_path(lang) %>
+            <%= link_to image_tag(lang.flag), language_path(lang), class: "globe" %>
           </li>
         <% end %>
       </ul>

@@ -1,11 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 $navcolor: #f8f8f8;
+$nav-height: 70px;
 
 body {
   text-align: center;
+}
+
+#main {
+  margin-top: $nav-height;
 }
 
 img {

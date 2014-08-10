@@ -1,9 +1,19 @@
-</br></br>
-<h1> Title: <%= @query.title %>  </h1>
+
+<h1> Query: </h1>
 <div class="content">
-  <br>English: <%= @query.english %> 
-<br>Content: <%= @query.other %> 
-<br><%= @query.created_at %> 
+ <br>Title: <%= @query.title %> 
+ <%= @language.lingua %>
+
+ <% if @query.description %>
+ 	<br>Description: <%= @query.description %> 
+ <%end%>
+ <% if @query.english %>
+ 	<br>English: <%=@query.english%>
+ <%end%>
+ <% if @query.other %>
+    <br>Content: <%= @query.other %> 
+ <%end%> 
+ <br><%= @query.created_at %> 
 </div>
 
 <h2>Comments</h2>
@@ -19,5 +29,5 @@
 
 
 </br></br>
- <p><%= link_to 'Back', queries_path %></p>
+ <p><%= link_to 'Back', language_queries_path(@language, @query) %></p>
 
