@@ -9,9 +9,8 @@
         <div class="col-md-4 item">
           <h4><%= query.english %></h4>
           <p><%= query.other %></p>
-          <p><%= query.created_at %></p>
+          <p><strong><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></strong></p>
           <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
-          <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
         </div>
     <% end %>
   <% end %>

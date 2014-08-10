@@ -3,6 +3,7 @@
 
 $navcolor: #f8f8f8;
 $nav-height: 70px;
+$footer-height: 120px;
 $raleway: 'Raleway';
 
 body {
@@ -11,11 +12,12 @@ body {
 
 h1 {
   font-family: $raleway;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 #main {
   margin-top: $nav-height;
+  margin-bottom: $footer-height;
 }
 
 img {
@@ -41,5 +43,5 @@ form {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    width: 25%;
+    width: 250px;
 }

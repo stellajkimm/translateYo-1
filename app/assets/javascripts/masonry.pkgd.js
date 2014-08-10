@@ -5,6 +5,7 @@
  * MIT License
  * by David DeSandro
  */
+
 ! function(a) {
     function b() {}
 
