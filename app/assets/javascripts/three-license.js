@@ -5120,14 +5120,15 @@ THREE.Loader.prototype = {
     crossOrigin: void 0,
     addStatusElement: function() {
         var a = document.createElement("div");
-        a.style.position = "absolute";
+        a.style.position = "fixed";
         a.style.right = "0px";
+        a.style.float = "left";
         a.style.top = "0px";
         a.style.fontSize = "0.8em";
         a.style.textAlign = "left";
         a.style.background = "rgba(0,0,0,0.25)";
         a.style.color = "#fff";
-        a.style.width = "120px";
+        a.style.width = "50px";
         a.style.padding = "0.5em 0.5em 0.5em 0.5em";
         a.style.zIndex = 1E3;
         a.innerHTML = "Loading ...";

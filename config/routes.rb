@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  #root 'globe#index'
 
   resources :comments do
     resources :comments
@@ -11,5 +10,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  root :to => 'queries#index'
+  resources :languages
+  
+  root :to => 'languages#index'
 end
