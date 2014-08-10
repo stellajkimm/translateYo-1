@@ -54,6 +54,9 @@ gem 'microsoft_translator'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+
+
 group :assets do
   gem 'coffee-rails'
 end
