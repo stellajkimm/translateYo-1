@@ -3,19 +3,6 @@ require 'faker'
 languages = %W(spanish, french, italian, german, dutch, portuguese)
 level     = %W(noob decent master)
 
-# 20.times do |i|
-#   user = User.create(first_name: Faker::Name.first_name,
-#                last_name: Faker::Name.last_name,
-#                 password_digest: "password",
-#                 username: Faker::Internet.user_name)
-
-#   2.times do 
-#     user.fluencies.create(language_id: rand(1..10),
-#                           proficiency: level.sample)
-#   end
-
-# end
-
 spanish = Language.create(lingua: "spanish", flag: "http://www.enchantedlearning.com/europe/spain/flag/Flagbig.GIF")
 
   spanish.queries.create(english: "Is this the real life? Is this just fantasy? Caught in a landslide, No escape from reality.", other: "¿Es esta la vida real? ¿Es esto una fantasía? Atrapado en un derrumbamiento No hay escape de la realidad.", user_id: rand(1..20))
