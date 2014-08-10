@@ -1,10 +1,31 @@
+<div class="modal fade bs-example-modal-regular" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= render 'queries/form'  %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-bing" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= render 'queries/bing_form'  %>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="header">
   <div>
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 </div>
 <div>
-<%= link_to "Post Query through Bing Translation", new_language_query_path(@language), class: "btn btn-default" %><br><br>
-<%= link_to "Post Query through Your Own Translation", new_language_query_path(@language), class: "btn btn-default" %>
+  
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-bing">Post Query through Bing Translation</a>
+  
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-regular">Post Query through Your Own Translation</a>
+
 </div>
 </div>
 

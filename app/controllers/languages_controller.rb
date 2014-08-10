@@ -4,6 +4,7 @@ class LanguagesController < ApplicationController
 
 	def show
 		@language = Language.find(params[:id])
-		@queries = @language.queries.order(created_at: :desc)
+		@queries = @language.queries
+    @query = @language.queries.new
 	end
 end

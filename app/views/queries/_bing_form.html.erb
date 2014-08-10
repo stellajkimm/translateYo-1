@@ -1,0 +1,12 @@
+<br>
+<%= form_for ([@language, @query]), :url => "/languages/#{@language.id}/queries/bing" do |f| %>
+	<%= f.label :title %>
+  <%= f.text_field :title %><br>
+   from: english<br>
+   to: <%= @language.lingua %><br>
+
+   <%= label_tag(:english, "text to translate:") %><br>
+   <%= f.text_area :english, :rows => 4 %><br>
+   <%= submit_tag("Post Query") %>
+<% end %>
+<br>
