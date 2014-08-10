@@ -16,6 +16,7 @@ describe CommentsController, :type => :controller do
 	end
 
 	context "POST #create" do
+		render_views
 		
 		it "should create a comment when params are valid" do
 			stub_authorize_user!
@@ -34,11 +35,11 @@ describe CommentsController, :type => :controller do
 
 		end
 
-		it "should re-render new template on failed save" do #BUGBUG
+		it "should notify of redirect to new template on failed save" do #BUGBUG
 			stub_authorize_user!
-	    expect(
-	    	post :create, comment: FactoryGirl.attributes_for(:comment, content: nil) 
-	    	).to render_template(:new)
+			post :create, comment: FactoryGirl.build(:comment, content: nil)
+	    expect(response.body).to eq("<html><body>You are being <a href=\"http://test.host/languages\">redirected</a>.</body></html>")
+
   	end
 	end
 
