@@ -35,15 +35,14 @@ form {
   text-align: center;
 }
 
-.col-md-4 {
+.col-md-40 {
     border: 1px solid #e7e7e7;
     border-radius: 10px;
-    margin: 5px;
+    margin: 10px;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    width: 25%;
 }
 
 .header {
@@ -52,4 +51,17 @@ form {
     vertical-align: middle;
     margin: 0px 20px;
   }
+}
+
+#grid {
+  margin: 0 auto;
+  width: 920px;
+  vertical-align: middle;
+}
+
+.hi {
+  width: 300px;
+  /*margin: px;*/
+  display: inline-block;
+  vertical-align: top;
 }
