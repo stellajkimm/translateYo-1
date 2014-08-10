@@ -1,7 +1,8 @@
+
 <div class="modal fade bs-example-modal-regular" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <%= render 'queries/form'  %>
+      <%= render 'queries/form' %>
     </div>
   </div>
 </div>
@@ -15,31 +16,65 @@
 </div>
 
 
-
 <div class="header">
   <div>
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 </div>
+
 <div>
-  
-  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-bing">Post Query through Bing Translation</a>
-  
-  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-regular">Post Query through Your Own Translation</a>
+
+  <a href="#" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-bing">Post Query through Bing Translation</a>
+
+  <br><br>
+
+  <a href="#" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-regular">Post Query through Your Own Translation</a>
 
 </div>
 </div>
 
 <br><br>
 
-<div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100, "gutter": 0 }'>
-  <% @queries.each do |query| %>
+<div id="grid" data-columns>
+  <div class="column">
+  <% @queries.each_with_index do |query, index| %>
     <% unless query.new_record? %>
-        <div class="col-md-4 item">
+      <% if index % 3 == 0 %>
+        <div class="col-md-40">
           <h4><%= query.english %></h4>
           <p><%= query.other %></p>
           <p><em><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em></p>
           <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
         </div>
+      <% end %>
     <% end %>
   <% end %>
+</div>
+<div class="column">
+    <% @queries.each_with_index do |query, index| %>
+    <% unless query.new_record? %>
+      <% if index % 3 == 1 %>
+        <div class="col-md-40">
+          <h4><%= query.english %></h4>
+          <p><%= query.other %></p>
+          <p><em><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em></p>
+          <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
+        </div>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>
+<div class="column">
+    <% @queries.each_with_index do |query, index| %>
+    <% unless query.new_record? %>
+      <% if index % 3 == 2 %>
+        <div class="col-md-40">
+          <h4><%= query.english %></h4>
+          <p><%= query.other %></p>
+          <p><em><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em></p>
+          <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
+        </div>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>
 </div>

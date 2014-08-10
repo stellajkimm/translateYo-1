@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe CommentsController, :type => :controller do
 
-	@parent = let!(:query) { FactoryGirl.create :query }
+	let!(:query) { FactoryGirl.create :query }
   let(:user) { FactoryGirl.create :user }
+  # let!(:comment) {FactoryGirl.create :comment}
 
 	context "GET #new" do
 		
