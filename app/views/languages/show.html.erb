@@ -1,0 +1,15 @@
+<div>
+  <h2><%= @language.lingua %></h2>
+  <%= image_tag(@language.flag) %>
+</div>
+
+<p>Add a <%= link_to "new #{@language.lingua} query", new_language_query_path(@language) %>.</p>
+<ul>
+  <% @queries.each do |query| %>
+    <% unless query.new_record? %>
+      <li>
+        <%= link_to "#{query.english[0..50]}&hellip;".html_safe, query_path(query) %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

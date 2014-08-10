@@ -1,26 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$navcolor: #f8f8f8;
+$nav-height: 70px;
+
 body {
-  // padding: 0px 70px 0px 200px;
   text-align: center;
 }
 
-.hi {
-  z-index: 1000;
-  top: 50px;
-  // left: 200px;
-  width: 100%;
-  height: 800px;
-  background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  text-align: center;
-}
-#container {
-  background-color: black;
-}
-.navbar-background {
-  background-color: #02771C;
+#main {
+  margin-top: $nav-height;
 }
 
 img {
@@ -31,7 +20,7 @@ img {
 
 .btn {
   border: none;
-  background-color: #02771C;
+  background-color: $navcolor;
 }
 
 form {
@@ -42,9 +31,5 @@ form {
   color: white;
   size: 50px;
   font-family: 'Raleway', sans-serif;
-}
-
-.login-color {
-  color: #82A4FF;
 }
 
