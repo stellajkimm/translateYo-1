@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem 'microsoft_translator'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -53,15 +54,16 @@ gem 'autoprefixer-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+group :assets do
+  gem 'coffee-rails'
 end
 
-group :test do
-  gem 'shoulda-matchers'
+group :development, :test do
+	gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'capybara'
+  gem 'simplecov'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
