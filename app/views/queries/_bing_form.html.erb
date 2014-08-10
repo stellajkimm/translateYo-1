@@ -1,0 +1,14 @@
+<%= form_for ([@language, @query]), :url => { :controller => 'queries', :action => 'bing_create'} do |f| %>
+	<%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+   from: english<br>
+   to: <%= @language.lingua %><br>
+
+   <%= label_tag(:english, "text to translate:") %><br>
+   <%= f.text_area :english, :rows => 4 %>
+   <%= submit_tag("Search") %>
+<% end %>
