@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :languages
+  resources :languages, only: [:index, :show] 
   
   root :to => 'languages#index'
 end
