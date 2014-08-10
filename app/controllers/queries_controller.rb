@@ -1,26 +1,27 @@
 
 class QueriesController < ApplicationController
 	# include translateYo::Commentable  #may need to be rewritten to work
+  #before_action :language
 
   def index
-    @queries = Query.all
+    @queries = language.queries.all
     #.where(language_id: params[:language_id])
   end
 
   def show
     @query = Query.find(params[:id])
+    @language = @query.language
   end
 
   def new
-    @query = Query.new
+    @query = language.queries.new
   end
 
-
-
   def create
-    @query = Query.new(query_params)
+    @query = language.queries.new(query_params)
+
     if @query.save
-      redirect_to queries_path
+      redirect_to language_queries_path(@language)
     else
       render 'new'
     end
@@ -29,7 +30,11 @@ class QueriesController < ApplicationController
   private
 
   def query_params
-    params.require(:query).permit(:title, :content)
+    params.require(:query).permit(:title, :description, :english, :other)
+  end
+
+  def language
+    @language ||= Language.find(params[:language_id])
   end
 
 end

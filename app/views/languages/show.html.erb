@@ -1,1 +1,22 @@
-show.html.erb
+<div>
+  <h2><%= @language.lingua %></h2>
+  <%= image_tag(@language.flag) %>
+</div>
+
+<%= form_for([@language, @language.queries.new]) do |f| %>
+  <%= f.text_field :english %>
+  <%= f.text_field :other %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @queries.each do |query| %>
+    <% unless query.new_record? %>
+      <li>
+        <p><%= query.english %></p>
+        <p><%= query.other %></p>
+        <%= link_to 'View', language_queries_path(@language, query) %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
