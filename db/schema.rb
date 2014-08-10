@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140809232734) do
     t.text     "english"
     t.text     "other"
     t.text     "title"
+    t.text     "description"
     t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"

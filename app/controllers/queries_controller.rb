@@ -30,7 +30,7 @@ class QueriesController < ApplicationController
   private
 
   def query_params
-    params.require(:query).permit(:title, :content)
+    params.require(:query).permit(:title, :description, :english, :other)
   end
 
   def language
