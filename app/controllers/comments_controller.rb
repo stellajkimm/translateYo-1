@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :get_parent
-  # before_filter :authorize_user!
+  before_filter :authorize_user!
   
   def new
     #@user_id=session[:user_id]
