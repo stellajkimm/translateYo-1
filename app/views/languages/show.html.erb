@@ -1,16 +1,47 @@
-Poop
-<div>
-  <h2><%= @language.lingua %></h2>
-  <%= image_tag(@language.flag) %>
+
+<div class="modal fade bs-example-modal-regular" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= render 'queries/form'  %>
+    </div>
+  </div>
 </div>
 
-<p>Add a <%= link_to "new #{@language.lingua} query", new_language_query_path(@language) %>.</p>
-<ul>
+<div class="modal fade bs-example-modal-bing" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= render 'queries/bing_form'  %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="header">
+  <div>
+<h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
+</div>
+
+<div>
+  
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-bing">Post Query through Bing Translation</a>
+  
+  <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-regular">Post Query through Your Own Translation</a>
+
+</div>
+</div>
+
+<br><br>
+
+<div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100, "gutter": 0 }'>
   <% @queries.each do |query| %>
     <% unless query.new_record? %>
-      <li>
-        <%= link_to "#{query.english[0..50]}&hellip;".html_safe, query_path(query) %>
-      </li>
+        <div class="col-md-4 item">
+          <h4><%= query.english %></h4>
+          <p><%= query.other %></p>
+          <p><em><%= query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em></p>
+          <p><%= link_to "View Details", query_path(query), class: "btn btn-default" %></p>
+        </div>
     <% end %>
   <% end %>
-</ul>
+</div>

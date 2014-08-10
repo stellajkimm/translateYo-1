@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post '/languages/:language_id/queries/bing' => "queries#bing_create"
+  # namespace :queries do
+  #   resources :comments, path: '/:query_id'
+  # end
   
   shallow do
     resources :languages do
