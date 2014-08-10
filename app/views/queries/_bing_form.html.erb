@@ -1,4 +1,4 @@
-<%= form_for ([@language, @query]), :url => { :controller => 'queries', :action => 'bing_create'} do |f| %>
+<%= form_for ([@language, @query]), :url => "/languages/#{@language.id}/queries/bing" do |f| %>
 	<%= f.label :title %>
   <%= f.text_field :title %><br>
 
