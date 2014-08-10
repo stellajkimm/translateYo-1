@@ -1,28 +1,30 @@
-$(document).ready(function(){
+function globe() {
+  var container = document.getElementById( 'container' );
 
-      var container, stats;
-      var camera, scene, renderer;
-      var group;
-      var mouseX = 0, mouseY = 0;
-      var speed = 0.050;
+  if(typeof(container) != undefined) {
+    var stats;
+    var camera, scene, renderer;
+    var group;
+    var mouseX = 0, mouseY = 0;
+    var speed = 0.050;
 
-      var windowHalfX = window.innerWidth / 2;
-      var windowHalfY = window.innerHeight / 2;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
 
-      init();
-      animate();
+    init();
+    animate();
 
-      function init() {
+    function init() {
 
-        container = document.getElementById( 'container' );
 
-        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 5, 2000 );
-        camera.position.z = 500;
 
-        scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 5, 2000 );
+      camera.position.z = 500;
 
-        group = new THREE.Object3D();
-        scene.add( group );
+      scene = new THREE.Scene();
+
+      group = new THREE.Object3D();
+      scene.add( group );
 
         // earth
 
@@ -51,7 +53,7 @@ $(document).ready(function(){
           canvas.width / 2,
           canvas.height / 2,
           canvas.width / 2
-        );
+          );
         gradient.addColorStop( 0.1, 'rgba(210,210,210,1)' );
         gradient.addColorStop( 1, 'rgba(255,255,255,1)' );
 
@@ -135,4 +137,8 @@ $(document).ready(function(){
       }).mouseleave(function(){
         speed = 0.0500;
       })
-})
+    }
+  }
+
+  $(document).ready(globe);
+  $(document).on('page:load', globe);

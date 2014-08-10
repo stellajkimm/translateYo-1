@@ -21,7 +21,7 @@ class QueriesController < ApplicationController
     @query = language.queries.new(query_params)
 
     if @query.save
-      redirect_to language_queries_path(@language)
+      redirect_to language_path(@language)
     else
       render 'new'
     end
