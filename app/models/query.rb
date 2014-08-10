@@ -4,4 +4,5 @@ class Query < ActiveRecord::Base
   # validates :title, presence: true
 
   belongs_to :language
+  belongs_to :user
 end

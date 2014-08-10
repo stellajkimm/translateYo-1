@@ -5,13 +5,16 @@ Welcome <%= @user.first_name %>
 
 email: <%= @user.email %><br>
 
+<% if @user.queries.any? %>
 <h2> Questions you posted </h2>
   <% @user.queries.each do |query| %>
     <%= link_to query.title %>
   <% end %>
+<% end %>
 
-
+<% if @user.comments.any? %>
 <h2> Answers you have posted </h2>
   <% @user.comments.each do |comment| %>
     <%= link_to comment.content %>
   <% end %>
+<% end %>
