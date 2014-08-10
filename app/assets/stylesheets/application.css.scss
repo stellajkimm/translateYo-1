@@ -3,13 +3,21 @@
 
 $navcolor: #f8f8f8;
 $nav-height: 70px;
+$footer-height: 120px;
+$raleway: 'Raleway';
 
 body {
   text-align: center;
 }
 
+h1 {
+  font-family: $raleway;
+  font-size: 4em;
+}
+
 #main {
   margin-top: $nav-height;
+  margin-bottom: $footer-height;
 }
 
 img {
@@ -27,9 +35,21 @@ form {
   text-align: center;
 }
 
-#translateyo {
-  color: white;
-  size: 50px;
-  font-family: 'Raleway', sans-serif;
+.col-md-4 {
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    margin: 5px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 25%;
 }
 
+.header {
+  div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 20px;
+  }
+}
