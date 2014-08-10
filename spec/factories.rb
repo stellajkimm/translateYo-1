@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :language do
-    lingua "Spanish"
+    lingua %W(spanish, french, italian, german, dutch, portuguese).sample
   end
 
   factory :query do
