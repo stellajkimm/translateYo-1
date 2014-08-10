@@ -7,8 +7,9 @@ describe CommentsController, :type => :controller do
 	context "GET #new" do
 
 		it "assigns a new comment to @comment" do
-			# get :new
-			# expect(assigns(:comment)).to eq(Comment.last)
+			stub_authorize_user!
+			get :new
+			expect(assigns(:comment)).to eq(Comment.last)
 		end
 
 	end
