@@ -6,11 +6,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  # namespace :queries do
-  #   resources :comments, path: '/:query_id'
-  # end
   
-    shallow do
+  shallow do
     resources :languages do
       resources :queries do 
       # 'lang/:lang_id/queries',           'lang/:lang_id/queries/new',           'queries/:id',      'queries/:id/edit' =>
