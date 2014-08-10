@@ -59,7 +59,9 @@ group :assets do
 end
 
 group :development, :test do
+	gem 'shoulda-matchers'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'simplecov'
 end
