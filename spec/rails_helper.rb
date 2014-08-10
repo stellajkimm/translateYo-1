@@ -21,23 +21,14 @@ require 'rspec/rails'
 require 'factory_girl'
 require 'capybara'
 
-# Requires supporting ruby files with custom matchers and macros, etc, in
-# spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
-# run as spec files by default. This means that files in spec/support that end
-# in _spec.rb will both be required and run as specs, causing the specs to be
-# run twice. It is recommended that you do not name files matching this glob to
-# end with _spec.rb. You can configure this pattern with the --pattern
-# option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 
-# Checks for pending migrations before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include Capybara::DSL
-
+  config.include AuthenticationHelpers
   config.mock_with :rspec
 
 
@@ -60,13 +51,9 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
- # Use color in STDOUT
+
   config.color = true
-
-  # Use color not only in STDOUT but also in pagers and files
   config.tty = true
-
-  # Use the specified formatter
   config.formatter = :documentation # :progress, :html, :textmate
   
 end
