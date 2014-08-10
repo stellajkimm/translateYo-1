@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :users
+
   resources :comments do
     resources :comments
   end
@@ -10,10 +12,10 @@ Rails.application.routes.draw do
   # namespace :queries do
   #   resources :comments, path: '/:query_id'
   # end
-  
+
   shallow do
     resources :languages do
-      resources :queries do 
+      resources :queries do
       # 'lang/:lang_id/queries',           'lang/:lang_id/queries/new',           'queries/:id',      'queries/:id/edit' =>
       #  language_queries_path(@language), new_language_queries_path(@language),  query_path(@query),  edit_query_path(@query)
         resources :comments
@@ -22,6 +24,6 @@ Rails.application.routes.draw do
       end
     end
   end
-  
+
   root :to => 'languages#index'
 end
