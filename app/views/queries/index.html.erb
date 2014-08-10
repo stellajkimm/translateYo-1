@@ -1,9 +1,9 @@
 <br><br><br><h1></h1>
 
-<p>Add a <%= link_to 'new query', new_query_path %>.</p>
+<p>Add a <%= link_to "new #{@language.lingua} query", new_language_query_path(@language) %>.</p>
 
 <ul>
   <% @queries.each do |query| %>
-    <li><%=link_to query.title, query_path(query) %></li>
+    <li><%=link_to "#{query.english[0..50]}&hellip;".html_safe, query_path(query) %></li>
   <% end %>
 </ul>

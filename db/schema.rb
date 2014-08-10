@@ -17,16 +17,15 @@ ActiveRecord::Schema.define(version: 20140809232734) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.string   "content"
+    t.text     "content"
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.integer  "up_vote",          default: 0
-    t.integer  "down_vote",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
 
-  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
 
   create_table "fluencies", force: true do |t|
     t.string   "proficiency"
@@ -56,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140809232734) do
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,5 +73,13 @@ ActiveRecord::Schema.define(version: 20140809232734) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "up"
+    t.integer  "down"
+    t.integer  "comment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

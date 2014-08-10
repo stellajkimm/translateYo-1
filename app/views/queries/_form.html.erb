@@ -1,5 +1,5 @@
 
-</br><%= form_for @query do |f| %>
+</br><%= form_for([@language, @query]) do |f| %>
 
 <% if @query.errors.any? %>
   <div id="error_explanation">
