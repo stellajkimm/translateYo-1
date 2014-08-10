@@ -4,7 +4,7 @@ class CreateQueries < ActiveRecord::Migration
       t.text :english
       t.text :other
       t.text :title
-      t.text :description
+      # t.text :description
 
       t.belongs_to :language
       t.belongs_to :user

@@ -18,16 +18,9 @@
   <%= f.text_field :title %>
 </div>
 <div>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
 </div>
-<div>
-  <%= f.label :english %>
-  <%= f.text_area :english, :rows => 4 %>
-</div>
-<div>
-  <%= f.label :other %>
-  <%= f.text_area :other, :rows => 4 %>
-</div>
+
   <%= f.submit "Post Query" %>
 <% end %>
