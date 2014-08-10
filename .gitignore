@@ -23,3 +23,4 @@ pickle-email-*.html
 .rvmrc
 lib/assets/.api_key
 lib/assets/.api_secret
+app/views/queries/.DS_Store
