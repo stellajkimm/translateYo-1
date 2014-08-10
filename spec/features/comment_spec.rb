@@ -9,10 +9,21 @@ describe 'Comment features' do
 			# visit new_query_comment_path(query)
 			# expect(page).to have_content("content")
 		end
-		it "can see a form with button 'add comment' write a new comment" do
+
+		it "can see a form with button 'add comment'" do
 			visit new_query_comment_path(query)
 			expect(page).to have_button("add comment")
 		end
+
+		it "can create a comment with form" do #BUGBUG
+			# stub_authorize_user!
+			visit new_query_comment_path(query)
+			expect {
+				fill_in 'Content', with: 'Here is my comment!'
+				click_button 'add comment'
+			}.to change{Comment.count}.by(1) 
+		end
+
 	end
 
 	# it "user can see comments on queried translation" do
