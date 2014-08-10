@@ -1,11 +1,16 @@
 <div class="header">
+  <div>
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
-
+</div>
+<div>
 <%= link_to "Post Query through Bing Translation", new_language_query_path(@language), class: "btn btn-default" %><br><br>
-<%= link_to "Post Query through Your Own Translation", new_language_query_path(@language), class: "btn btn-default" %><br><br>
+<%= link_to "Post Query through Your Own Translation", new_language_query_path(@language), class: "btn btn-default" %>
+</div>
 </div>
 
-<div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100 }'>
+<br><br>
+
+<div class="container js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 100, "gutter": 0 }'>
   <% @queries.each do |query| %>
     <% unless query.new_record? %>
         <div class="col-md-4 item">
