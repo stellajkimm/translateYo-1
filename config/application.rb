@@ -10,6 +10,7 @@ Bundler.require(*Rails.groups)
 
 module TranslateYo
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/lib)
     #below is from http://richonrails.com/articles/working-with-bootstrap-sass.. not sure if we need it
     #config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     # Settings in config/environments/* take precedence over those specified here.

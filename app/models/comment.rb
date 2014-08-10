@@ -14,5 +14,6 @@ class Comment < ActiveRecord::Base
     @query = commentable.is_a?(Query) ? commentable : commentable.query
   end
 
-	validates :content, presence: true
+  validates :content, presence: true
+
 end
