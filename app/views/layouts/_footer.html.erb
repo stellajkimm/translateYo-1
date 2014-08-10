@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="footer">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% all_languages.each do |lang| %>
           <li>
-            <%= link_to image_tag(lang.flag), language_path(lang), class: "globe" %>
+            <%= link_to image_tag(lang.flag, class: "globe", alt: lang.lingua), language_path(lang) %>
           </li>
         <% end %>
       </ul>
