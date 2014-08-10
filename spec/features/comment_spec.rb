@@ -4,7 +4,7 @@ describe 'Comment features' do
 	context "on new comment page" do
 		let(:query) { FactoryGirl.create(:query) }
 		it "can see a form to write a new comment" do
-			stub_authorize_user!
+			# stub_authorize_user!
 			visit new_query_comment_path(query)
 			expect(page).to have_content("content")
 		end
