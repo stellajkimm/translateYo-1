@@ -8,6 +8,7 @@ describe Comment do
 
 	context "query" do
 		it "returns query if defined" do
+			pending
 			# expect(assigns(:query)).to eq(@query)
 		end
 	end
