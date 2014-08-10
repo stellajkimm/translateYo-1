@@ -4,7 +4,7 @@ module Authentication
   end
 
   def authorize_user!
-    redirect_to new_admin_session_path unless current_user.present?
+    redirect_to language_queries_path unless current_user.present?
   end
 
   def login user
