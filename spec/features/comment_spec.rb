@@ -21,7 +21,6 @@ describe 'Comment features' do
 
 		it "can create a comment with form" do #BUGBUG
 			stub_authorize_user!
-			p query
 			expect{ 
 				visit new_query_comment_path(query)
 				fill_in 'Content', with: 'Here is my comment!'
