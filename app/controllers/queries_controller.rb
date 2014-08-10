@@ -18,23 +18,19 @@ class QueriesController < ApplicationController
     if @query.save
       redirect_to language_path(@language)
     else
-      render 'new'
+      render 'languages/show'
     end
   end
 
   def bing_create
     text_to_translate = params[:query][:english] 
     to_text = Language.find(params[:language_id])
-    API.call_api
-    translation = $translator.translate(text_to_translate, "en", to_text.code, "text/html")
     @query = language.queries.new(query_params)
-    @query.other = translation
+    @query.other = API.call_api(text_to_translate, to_text)
     if @query.save
       redirect_to language_path(@language)
-      p "$" * 50
-      p @query
     else
-      render 'bing_new'
+      render 'languages/show'
     end
   end
 
