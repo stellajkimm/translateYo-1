@@ -8,6 +8,8 @@ $raleway: 'Raleway';
 
 body {
   text-align: center;
+  width: 920px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -35,15 +37,14 @@ form {
   text-align: center;
 }
 
-.col-md-4 {
+.col-md-40 {
     border: 1px solid #e7e7e7;
     border-radius: 10px;
-    margin: 5px;
+    margin: 10px;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    width: 25%;
 }
 
 .header {
@@ -53,3 +54,39 @@ form {
     margin: 0px 20px;
   }
 }
+
+#grid {
+  vertical-align: middle;
+}
+
+.column {
+  width: 300px;
+  /*margin: px;*/
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content {
+  background-color: $navcolor;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.comments {
+  /*background-color: $navcolor;*/
+  border-radius: 10px;
+  padding: 10px;
+
+  li {
+    list-style-type: none;
+    margin: 10px;
+
+    .content {
+      background-color: $navcolor;
+      border-radius: 10px;
+      list-style-type: none;
+    }
+
+  }
+}
+
