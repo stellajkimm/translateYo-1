@@ -1,14 +1,12 @@
 class API
-	API_KEY = File.read('../../lib/assets/.api_key')
-	API_SECRET = File.read('../../lib/assets/.api_secret')
+	API_KEY = File.read('lib/assets/.api_key')
+	API_SECRET = File.read('lib/assets/.api_secret')
 
 	def self.call_api
-		user_key = API_KEY
-		user_token = API_SECRET
+		$translator = MicrosoftTranslator::Client.new(API_KEY, API_SECRET)
 	end
 
 
 
 end
 
-	# API.call_api
