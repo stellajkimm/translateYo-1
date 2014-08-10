@@ -8,6 +8,8 @@ $raleway: 'Raleway';
 
 body {
   text-align: center;
+  width: 920px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -54,8 +56,6 @@ form {
 }
 
 #grid {
-  margin: 0 auto;
-  width: 920px;
   vertical-align: middle;
 }
 
@@ -64,5 +64,29 @@ form {
   /*margin: px;*/
   display: inline-block;
   vertical-align: top;
+}
+
+.content {
+  background-color: $navcolor;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.comments {
+  /*background-color: $navcolor;*/
+  border-radius: 10px;
+  padding: 10px;
+
+  li {
+    list-style-type: none;
+    margin: 10px;
+
+    .content {
+      background-color: $navcolor;
+      border-radius: 10px;
+      list-style-type: none;
+    }
+
+  }
 }
 
