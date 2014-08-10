@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
   	sequence(:username) { |n| "user#{n}"}
-    # sequence(:email) {|n| "email#{n}@gmail.com" }
+    sequence(:email) {|n| "email#{n}@gmail.com" }
     password "password"
   end
   
@@ -21,6 +21,8 @@ FactoryGirl.define do
 
   factory :comment do
   	sequence(:content) {|n| "Here is comment no. #{n}."}
+    commentable_id 1
+    commentable_type "Query"
   end
   
 end
