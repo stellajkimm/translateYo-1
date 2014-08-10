@@ -10,6 +10,7 @@ class QueriesController < ApplicationController
   def show
     @query = Query.find(params[:id])
     @language = @query.language
+    # @queries = Query.all
   end
 
   def new
@@ -23,6 +24,26 @@ class QueriesController < ApplicationController
       redirect_to language_path(@language)
     else
       render 'new'
+    end
+  end
+
+  def bing_new
+    @query = language.queries.new
+  end
+
+  def bing_create
+    text_to_translate = params[:query][:english] 
+    to_text = Language.find(params[:language_id])
+    translator = MicrosoftTranslator::Client.new('translate-yo', 'TgUltCV++g16wXdF4ZugkJFY+5N/QeB4o31auIXys0U=')
+    translation = translator.translate(text_to_translate, "en", to_text.code, "text/html")
+    @query = language.queries.new(query_params)
+    @query.other = translation
+    if @query.save
+      redirect_to language_path(@language)
+      p "$" * 50
+      p @query
+    else
+      render 'bing_new'
     end
   end
 
