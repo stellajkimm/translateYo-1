@@ -6,7 +6,7 @@ describe 'Comment features' do
 		it "can see a form to write a new comment" do
 			stub_authorize_user!
 			visit new_query_comment_path(query)
-			expect(page).to have_content("content")
+			expect(page).to have_text("Content")
 		end
 
 		it "can see a form with button 'add comment'" do
