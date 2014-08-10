@@ -16,7 +16,6 @@ FactoryGirl.define do
   factory :query do
   	sequence(:english) {|n| "Hello #{n}"}
   	title "Need help"
-  	description "Please help"
     user_id [1,2,3,4].sample
   end
 
