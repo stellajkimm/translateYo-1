@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140810171753) do
     t.string   "commentable_type"
     t.integer  "up_vote",          default: 0
     t.integer  "down_vote",        default: 0
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
