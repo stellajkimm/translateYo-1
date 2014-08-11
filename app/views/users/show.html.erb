@@ -1,20 +1,24 @@
 <h1> User Profile Page </h1>
 
 Welcome <%= @user.first_name %>
-<%= @user.last_name %><br>
+<%= @user.last_name %><br><br>
 
 email: <%= @user.email %><br>
 
-<% if @user.queries.any? %>
 <h2> Questions you posted </h2>
+<% if @user.queries.any? %>
   <% @user.queries.each do |query| %>
-    <%= link_to query.title %>
+    <%= link_to query.title, query_path(query) %><br>
   <% end %>
+<% else %>
+  You have not posted any questions yet.
 <% end %>
 
-<% if @user.comments.any? %>
 <h2> Answers you have posted </h2>
+<% if @user.comments.any? %>
   <% @user.comments.each do |comment| %>
-    <%= link_to comment.content %>
+    <%= link_to comment.content, comment_path(comment) %>
   <% end %>
+<% else %>
+  You have not posted any comments yet.
 <% end %>

@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :queries
   has_many :fluencies
-  has_many :languages, through: :fluencies  
+  has_many :languages, through: :fluencies
 end
