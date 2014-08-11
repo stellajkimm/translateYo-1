@@ -2,9 +2,9 @@
   <div class="content">
    <%= comment.content %>
    <br><br><em><%= comment.created_at.strftime("%B %y, %Y, %I:%M%P") %></em>
-   <br><br><%=button_to( "Up", :action => "up_vote", :controller => "comments") %>
+   <br><br><%= link_to( image_tag("http://s3.amazonaws.com/rapgenius/4XfqCmrSXWvJhhk9vZxc_facebook-like-icon.png", class: "vote"), up_vote_comment_path(comment), method: :post) %>
       <%= comment.up_vote %>
-          <%=button_to( "Down", :action => "down_vote", :controller => "comments") %>
+          <%= link_to( image_tag("http://img.wonderhowto.com/img/84/98/63438314220753/0/add-dislike-button-your-facebook-page.w654.jpg", class: "vote"), down_vote_comment_path(comment), method: :post) %>
       <%= comment.down_vote %>
 
 
