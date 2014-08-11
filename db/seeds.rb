@@ -89,6 +89,6 @@ french = Language.create(lingua: "french", flag: "http://www.industcards.com/Fra
 
  50.times do 
     commentid=rand(1..36)
-    Comment.find(commentid).comments.create!(content: Faker::Lorem.paragraph, commentable_id: commentid, commentable_type: "comment")
+    Comment.find(commentid).comments.create!(content: Faker::Lorem.paragraph, commentable_id: commentid, commentable_type: "comment", user_id: rand(1..20) )
 
  end

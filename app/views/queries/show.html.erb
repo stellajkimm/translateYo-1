@@ -3,7 +3,7 @@
 <div class="content">
  <h4><%= @query.title %></h4>
 
- 
+
  <% if @query.english %>
  	<br><strong>English: </strong><%=@query.english%><br>
  <%end%>
@@ -22,4 +22,4 @@
   <%= render :partial => 'comments/comment', :collection => @query.comments %>
 </ul>
 </div>
- <p><%= link_to 'Back', language_queries_path(@language, @query) %></p>
+ <p><%= link_to 'Back', language_path(@language) %></p>
