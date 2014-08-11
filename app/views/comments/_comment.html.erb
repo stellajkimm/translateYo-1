@@ -2,7 +2,12 @@
   <div class="content">
    <%= comment.content %>
    <br><br><em><%= comment.created_at.strftime("%B %y, %Y, %I:%M%P") %></em>
-   <br><br>Upvotes:<%=comment.up_vote%> Downvotes: <%=comment.down_vote%>
+   <br><br><%=button_to( "Up", :action => "up_vote", :controller => "comments") %>
+      <%= comment.up_vote %>
+          <%=button_to( "Down", :action => "down_vote", :controller => "comments") %>
+      <%= comment.down_vote %>
+
+
   <p><%= link_to 'Add a Reply', new_comment_comment_path(comment) %></p>
   </div>
 
