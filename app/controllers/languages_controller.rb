@@ -8,10 +8,8 @@ class LanguagesController < ApplicationController
     @query = @language.queries.new
     @queries = @language.queries.order(created_at: :desc)
     if params[:search]
-      p q = "%#{params[:search]}%"
+      q = "%#{params[:search]}%"
       @queries = @queries.where("english like ?", q)
-      p "*****************************"
-      p @queries
     end
   end
 
