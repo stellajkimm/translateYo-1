@@ -10,7 +10,7 @@
  <% if @query.other %>
     <br><strong>Content: </strong><%= @query.other %><br>
  <%end%>
- <br><em><%= @query.created_at.strftime("%B %y, %Y, %I:%M%P") + ", " + @username %></em>
+ <br><em><%= @query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em>
 </div>
 
 <div class="comments">
@@ -22,4 +22,4 @@
   <%= render :partial => 'comments/comment', :collection => @query.comments %>
 </ul>
 </div>
- <p><%= link_to 'Back', language_path(@language) %></p>
+ <p><%= link_to 'Back', language_path(@language), class: "btn btn-default" %></p>
