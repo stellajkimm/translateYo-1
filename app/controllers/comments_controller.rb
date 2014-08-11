@@ -1,7 +1,21 @@
 class CommentsController < ApplicationController
-  before_filter :get_parent
-  # before_filter :authorize_user!
-  
+  before_filter :get_parent, :except => [:up_vote, :down_vote]
+  # before_filter :authorize_user!, :except => [:up_vote]
+
+  def up_vote
+    @comment = Comment.find(params[:id])
+    @comment.up_vote += 1
+    @comment.save
+    redirect_to "http://www.google.com"
+  end
+
+  def down_vote
+    @comment = Comment.find(params[:id])
+    @comment.down_vote -= 1
+    @comment.save
+    redirect_to "http://www.google.com"
+  end
+
   def new
     #@user_id=session[:user_id]
     #@comment = @parent.comments.build(user_id: @user_id)
@@ -10,7 +24,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @parent.comments.build(comment_params)
-    
+
     if @comment.save
       redirect_to @comment.query, :notice => 'Thank you for your comment!'
     else
@@ -18,8 +32,11 @@ class CommentsController < ApplicationController
     end
   end
 
+
+
+
   protected
-  
+
   def get_parent
     @parent = Query.find_by_id(params[:query_id]) if params[:query_id]
     @parent = Comment.find_by_id(params[:comment_id]) if params[:comment_id]

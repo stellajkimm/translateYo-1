@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   resources :users
 
+  #get 'comments/:id/up_vote' => 'comments#up_vote'
+  resources :comments do
+    member do
+      post 'up_vote'
+      post 'down_vote'
+    end
+  end
+
   resources :comments do
     resources :comments
   end
