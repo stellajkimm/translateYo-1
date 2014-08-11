@@ -6,6 +6,8 @@
       <%= comment.up_vote %>
           <%=button_to( "Down", :action => "down_vote", :controller => "comments") %>
       <%= comment.down_vote %>
+
+
   <p><%= link_to 'Add a Reply', new_comment_comment_path(comment) %></p>
   </div>
 

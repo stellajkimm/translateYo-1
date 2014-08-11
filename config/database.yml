@@ -1,6 +1,7 @@
 test:
   adapter: postgresql
   encoding: unicode
+  # database: travis_ci_test
   database: test_database
   pool: 5
 
