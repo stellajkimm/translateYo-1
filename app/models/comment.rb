@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
 	# has_many :votes
 
 	 belongs_to :commentable, :polymorphic => true
-	 belongs_to :user
+	 # belongs_to :user
  	 has_many :comments, :as => :commentable
   
   def query
