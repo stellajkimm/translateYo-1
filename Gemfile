@@ -20,6 +20,7 @@ gem 'haml-rails'
 
 gem 'faker'
 gem "unicorn-rails"
+gem 'unicorn'
 gem 'acts_as_tree'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
