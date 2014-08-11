@@ -1,8 +1,8 @@
+
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
 <br><br>
 <div class="content">
  <h4><%= @query.title %></h4>
-
 
  <% if @query.english %>
  	<br><strong>English: </strong><%=@query.english%><br>
@@ -10,7 +10,10 @@
  <% if @query.other %>
     <br><strong>Content: </strong><%= @query.other %><br>
  <%end%>
+
+
  <br><em><%= @query.created_at.strftime("%B %y, %Y, %I:%M%P") %></em>
+
 </div>
 
 <div class="comments">
