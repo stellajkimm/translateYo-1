@@ -16,23 +16,24 @@
 </div>
 
 
-<div class="header">
-  <div>
+
 <h1><%= @language.lingua %><%= image_tag(@language.flag) %></h1>
-</div>
 
-<div>
-
+<br>
   <a href="#" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-bing">Post Query through Bing Translation</a>
 
-  <br><br>
+<br><br>
 
   <a href="#" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-regular">Post Query through Your Own Translation</a>
 
-</div>
-</div>
-
 <br><br>
+
+  <%= form_tag @language, url: {action: "search"},  method: "get" do |f| %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search All Queries", name: nil %>
+  <% end %>
+
+<br>
 
 <div id="grid" data-columns>
   <div class="column">
