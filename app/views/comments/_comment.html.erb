@@ -3,6 +3,10 @@
    <%= comment.content %>
    <br><br><em><%= comment.created_at.strftime("%B %y, %Y, %I:%M%P") %></em>
    <br><br>Upvotes:<%=comment.up_vote%> Downvotes: <%=comment.down_vote%>
+  <%= button_to "Upvote!!!",  %>
+  <%= button_to "Downvote!!!",  %>
+
+
   <p><%= link_to 'Add a Reply', new_comment_comment_path(comment) %></p>
   </div>
 
